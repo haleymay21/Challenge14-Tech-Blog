@@ -30,4 +30,3 @@ router.get("/signup", (req, res) => {
 
 module.exports = router;
 
-// also need login and signup routes here //
