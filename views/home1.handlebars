@@ -1,15 +1,31 @@
 <body>
         <div class="topnav" id="example10">
+            <a href="/">Home</a>
+            <a href="/dashboard">Dashboard</a>
             <a href="/login">Login</a>
-            <a href="/signup">Signup</a>
-     
-        </div>
-        <header>
-            <h1 id="example10">Tap Into Source</h1>
-        </header>
-      {{#each posts}}
+            <a href="">Logout</a>
+            <p>Le Tech Blog</p>
+          </div>
+{{#each user.posts as |post|}}
+  <div class="card">
+    <div class="card-header">
       <h2>{{post_title}}</h2>
-    <h2>{{post_content}}</h2>
-      {{/each}}
+      <p>{{date_created}}</p>
+      <p>{{user.username}}</p>
+    </div>
+    <div id="content" role="tabpanel">
+      <p>{{post_content}}</p>
+    </div>
+  </div>
+  <p>{{post.user.username}}</p>
+{{/each}}
     </body>
+
+
+
+      {{!-- {{#each posts}}
+    <h2>{{post_title}}</h2>
+    <h2>{{post_content}}</h2>
+      {{/each}} --}}
 </html>
+

@@ -9,7 +9,7 @@ router.get("/", async (req, res) => {
     });
 
     const posts = postData.map((post) => post.get({ plain: true }));
-    res.render("post", { posts, layout: "dashboard" });
+    res.render("post", { posts, layout: "dashboard", style: "dashboard.css" });
   } catch (err) {
     res.json(err);
   }

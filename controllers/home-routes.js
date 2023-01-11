@@ -5,9 +5,7 @@ const withAuth = require("../utils/auth");
 router.get("/", async (req, res) => {
   try {
     const postData = await Post.findAll({});
-    console.log(postData);
     const posts = postData.map((post) => post.get({ plain: true }));
-    console.log(posts);
     res.render("home1", { posts, layout: "home" });
   } catch (err) {
     res.status(400).json(err);
@@ -29,4 +27,3 @@ router.get("/signup", (req, res) => {
 });
 
 module.exports = router;
-
